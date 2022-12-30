@@ -6,7 +6,7 @@ pip install -r /tmp/requirements.txt
 
 # Crawling
  scrapy crawl cobasiProductSpider -O cobasiResults.json
-
+ scrapy crawl petzProductSpider -O petzResults.json
 
 # XML
 pip install scrapy-dynamic-spiders
