@@ -1,8 +1,16 @@
-# PetzCrawler
+# PetShopCrawler
 
 pipreqs --encoding utf-8 "./venv"
 
 pip install -r /tmp/requirements.txt
+
+# Crawling
+ scrapy crawl cobasiProductSpider -O cobasiResults.json
+
+
+# XML
+pip install scrapy-dynamic-spiders
+https://stackoverflow.com/questions/5033955/xpath-select-text-node
 
 # css
 https://stackoverflow.com/questions/34255232/exclude-div-from-scrapy
@@ -12,6 +20,12 @@ Por padrão o encode do json exportado é encoding (\uXXXX sequences) for historic
 Para que o json utilize o encoding utf-8 é necessário deixar a configuração explícita.
 https://docs.scrapy.org/en/latest/topics/feed-exports.html#std-setting-FEED_EXPORT_ENCODING
 FEED_EXPORT_ENCODING = 'utf-8'
+
+json.loads(response.body_as_unicode().replace("'", '"'));
+
+response.json;
+
+json.loads(response.text);
 
 # Parse Json
 json.loads()
@@ -57,4 +71,3 @@ SELENIUM_DRIVER_ARGUMENTS = ['--headless']
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_selenium.SeleniumMiddleware': 800
 }
-
